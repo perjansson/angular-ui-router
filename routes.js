@@ -6,7 +6,7 @@ var dummyPersons = [
 		phone: "111-1111111"
 	},
 	{
-		name: "Jonny Bråttom",
+		name: "Michael Laudrup",
 		phone: "222-2222222"
 	},
 	{
@@ -14,7 +14,7 @@ var dummyPersons = [
 		phone: "333-3333333"
 	},
 	{
-		name: "Glenn Hysén",
+		name: "Andreas Ravelli",
 		phone: "444-4444444"
 	}
 ];
