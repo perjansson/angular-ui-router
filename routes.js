@@ -22,10 +22,9 @@ var dummyPersons = [
 module.exports = {
 
 	search: function(req, res) {
-		var result = _.filter(dummyPersons, function(person) {
+		res.send(_.filter(dummyPersons, function(person) {
 			return person.name.toLowerCase().indexOf(req.params.query.toLowerCase()) !== -1;
-		});
-		res.send(result);
+		}));
 	},
 
 	getPersons: function(req, res) {
