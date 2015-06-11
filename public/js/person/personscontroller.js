@@ -2,6 +2,7 @@ angular.module('personApp').controller('PersonsCtrl', ['$state', 'PersonsService
 
   this.persons = persons.data;
   this.person = person.data;
+
   this.personQuery = $state.params.query;
 
   this.savePerson = function() {

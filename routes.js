@@ -8,10 +8,7 @@ module.exports = {
 			},
 			{
 				name: "Jonny Bråttom"
-			},
-			{
-				name: "Mats Magnusson"
-			},
+			}
 		];
 		res.send(persons);
 	},

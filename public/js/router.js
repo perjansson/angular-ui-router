@@ -10,7 +10,7 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				person: function () { return {}; }
 			},
 			templateUrl: 'partials/persons.html',
-			controller: 'PersonsCtrl'
+			controller: 'PersonsCtrl as personsctrl'
 			})
 
 		.state('search', {
@@ -22,7 +22,7 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				person: function() { return {}; }
 				},
 			templateUrl: 'partials/persons.html',
-			controller: 'PersonsCtrl'
+			controller: 'PersonsCtrl as personsctrl'
 			})
 
 		.state('person', {
@@ -34,7 +34,7 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				}]
 			},
 			templateUrl: 'partials/person.html',
-			controller: 'PersonsCtrl'
+			controller: 'PersonsCtrl as personsctrl'
 		});
 
 	$urlRouterProvider.otherwise('/persons');
