@@ -1,10 +1,13 @@
 {
   "name": "angular-ui-router",
   "version": "1.0.0",
+  "engines": {
+    "node": "0.10.x"
+  },
   "description": "A sample project showing AngularJS with UI Router",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
