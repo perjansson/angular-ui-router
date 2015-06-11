@@ -5,7 +5,7 @@ angular.module('personApp').service('PersonsService', ['$http', function($http) 
 	};
 
 	this.searchPersons = function(query) {
-		return $http.get('/persons/search/' + query);
+		return $http.get('/persons/' + query);
 	};
 
 	this.getPersons = function() {
@@ -13,7 +13,7 @@ angular.module('personApp').service('PersonsService', ['$http', function($http) 
 	};
 
 	this.getPerson = function(name) {
-		return $http.get('/persons/' + name);
+		return $http.get('/person/' + name);
 	};
 
 }]);

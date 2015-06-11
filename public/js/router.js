@@ -10,11 +10,11 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				person: function () { return {}; }
 			},
 			templateUrl: 'partials/persons.html',
-			controller: 'PersonsCtrl as personsctrl'
+			controller: 'PersonsCtrl as ctrl'
 			})
 
 		.state('search', {
-			url: '/persons/search/:query',
+			url: '/persons/:query',
 			resolve: {
 				persons: ['$stateParams', 'PersonsService', function($stateParams, personsService) {
 			    	return personsService.searchPersons($stateParams.query);
@@ -22,11 +22,11 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				person: function() { return {}; }
 				},
 			templateUrl: 'partials/persons.html',
-			controller: 'PersonsCtrl as personsctrl'
+			controller: 'PersonsCtrl as ctrl'
 			})
 
 		.state('person', {
-			url: '/persons/:name',
+			url: '/person/:name',
 			resolve: {
 				persons: function () { return []; },
 				person: ['$stateParams', 'PersonsService', function($stateParams, personsService) {
@@ -34,7 +34,7 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				}]
 			},
 			templateUrl: 'partials/person.html',
-			controller: 'PersonsCtrl as personsctrl'
+			controller: 'PersonsCtrl as ctrl'
 		});
 
 	$urlRouterProvider.otherwise('/persons');
