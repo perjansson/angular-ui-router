@@ -1,0 +1,1 @@
+var personApp = angular.module('personApp', ['ui.router']);

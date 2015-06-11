@@ -1,0 +1,29 @@
+{
+  "name": "angular-ui-router",
+  "version": "1.0.0",
+  "description": "A sample project showing AngularJS with UI Router",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perjansson/angular-ui-router.git"
+  },
+  "author": "Per Jansson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perjansson/angular-ui-router/issues"
+  },
+  "homepage": "https://github.com/perjansson/angular-ui-router",
+  "dependencies": {
+    "express": "~4.9.7",
+    "body-parser": "1.12.4",
+    "nodemon": "^1.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-livereload": "^3.8.0"
+  }
+}
