@@ -7,11 +7,12 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				persons: ['PersonsService', function(personsService) {
 			    	return personsService.getPersons();
 			  	}],
-				person: function () { return {}; }
+				person: function () { return {}; },
+				filter: function () { return ""; }
 			},
 			templateUrl: 'partials/persons.html',
 			controller: 'PersonsCtrl as ctrl'
-			})
+		})
 
 		.state('search', {
 			url: '/persons/:query',
@@ -19,11 +20,14 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				persons: ['$stateParams', 'PersonsService', function($stateParams, personsService) {
 			    	return personsService.searchPersons($stateParams.query);
 				}],
-				person: function() { return {}; }
-				},
+				person: function() { return {}; },
+				filter: ['$stateParams', function($stateParams) { 
+					return $stateParams.query; 
+				}]
+			},
 			templateUrl: 'partials/persons.html',
 			controller: 'PersonsCtrl as ctrl'
-			})
+		})
 
 		.state('person', {
 			url: '/person/:name',
@@ -31,7 +35,8 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				persons: function () { return []; },
 				person: ['$stateParams', 'PersonsService', function($stateParams, personsService) {
 					return personsService.getPerson($stateParams.name);
-				}]
+				}],
+				filter: function () { return ""; }
 			},
 			templateUrl: 'partials/person.html',
 			controller: 'PersonsCtrl as ctrl'

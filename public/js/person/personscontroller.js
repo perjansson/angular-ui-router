@@ -1,7 +1,8 @@
-angular.module('personApp').controller('PersonsCtrl', ['$state', 'PersonsService', 'persons', 'person', function($state, personsService, persons, person) {
+angular.module('personApp').controller('PersonsCtrl', ['$state', 'PersonsService', 'persons', 'person', 'filter', function($state, personsService, persons, person, filter) {
 
   this.persons = persons.data;
   this.person = person.data;
+  this.filter = filter;
 
   this.personQuery = $state.params.query;
 
