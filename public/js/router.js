@@ -45,7 +45,3 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 	$urlRouterProvider.otherwise('/persons');
 
 }]);
-
-angular.module('personApp').run(function($state, $rootScope) {
-  $rootScope.$on("$stateChangeError", console.log.bind(console));
-});
