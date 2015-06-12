@@ -1,9 +1,7 @@
 # angular-ui-router
-A sample project showing AngularJS with UI Router
+A sample project showing AngularJS, based on the <a href="https://scotch.io/tutorials/making-skinny-angularjs-controllers" target="_blank">Skinny Controller</a> and <a href="https://scotch.io/tutorials/angular-routing-using-ui-router" target="_blank">UI Router design</a>
 
-Based on the <a href="https://scotch.io/tutorials/making-skinny-angularjs-controllers" target="_blank">Skinny Controller</a> and <a href="https://scotch.io/tutorials/angular-routing-using-ui-router" target="_blank">UI Router design</a>
-
-Since it's a node project it requires <a href="https://nodejs.org/" target="_blank">Node</a> to be installed. Also, install <a href="https://www.npmjs.com/package/gulp" target="_blank">Gulp</a> globally as a build tool.
+*Since it's a node project it requires <a href="https://nodejs.org/" target="_blank">Node</a> to be installed on the local machine. Also, install <a href="https://www.npmjs.com/package/gulp" target="_blank">Gulp</a> as a build tool.*
 
 ## To install and run locally
 1. git clone https://github.com/perjansson/angular-ui-router
