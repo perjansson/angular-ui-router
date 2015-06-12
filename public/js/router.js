@@ -30,18 +30,35 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 		})
 
 		.state('person', {
-			url: '/person/:name',
+			url: '/person/:key',
 			resolve: {
 				persons: function () { return []; },
 				person: ['$stateParams', 'PersonsService', function($stateParams, personsService) {
-					return personsService.getPerson($stateParams.name);
+					return personsService.getPerson($stateParams.key);
 				}],
 				filter: function () { return ""; }
 			},
 			templateUrl: 'partials/person.html',
 			controller: 'PersonsCtrl as ctrl'
+		})
+
+		.state('edit-person', {
+			url: '/person/:key/edit',
+			resolve: {
+				persons: function () { return []; },
+				person: ['$stateParams', 'PersonsService', function($stateParams, personsService) {
+					return personsService.getPerson($stateParams.key);
+				}],
+				filter: function () { return ""; }
+			},
+			templateUrl: 'partials/edit-person.html',
+			controller: 'PersonsCtrl as ctrl'
 		});
 
 	$urlRouterProvider.otherwise('/persons');
 
-}]);
+	}]);	
+
+	angular.module('personApp').run(function($state, $rootScope) {		
+	  $rootScope.$on("$stateChangeError", console.log.bind(console));		
+	}); 		

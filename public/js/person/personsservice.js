@@ -1,7 +1,11 @@
 angular.module('personApp').service('PersonsService', ['$http', function($http) {
 
-	this.savePerson = function(person) {
+	this.createPerson = function(person) {
 		return $http.post('/persons', person);
+	};
+
+	this.updatePerson = function(person) {
+		return $http.post('/person/' + person.key, person);
 	};
 
 	this.searchPersons = function(query) {
@@ -12,8 +16,8 @@ angular.module('personApp').service('PersonsService', ['$http', function($http) 
 		return $http.get('/persons');
 	};
 
-	this.getPerson = function(name) {
-		return $http.get('/person/' + name);
+	this.getPerson = function(key) {
+		return $http.get('/person/' + key);
 	};
 
 }]);

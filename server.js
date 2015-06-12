@@ -10,7 +10,9 @@ app.use(bodyParser.json());
 
 app.get('/persons/:query', routes.search);
 app.get('/persons', routes.getPersons);
-app.get('/person/:name', routes.getPerson);
+app.get('/person/:key', routes.getPerson);
+app.post('/person/:key', routes.updatePerson);
+app.post('/persons', routes.createPerson);
 
 var appPort = Number(process.env.PORT || 1337);
 var server = app.listen(appPort);

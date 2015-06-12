@@ -6,8 +6,15 @@ angular.module('personApp').controller('PersonsCtrl', ['$state', 'PersonsService
 
   this.personQuery = $state.params.query;
 
-  this.savePerson = function() {
-    personsService.savePerson(this.person)
+  this.updatePerson = function() {
+    personsService.updatePerson(this.person)
+      .then(function() {
+        $state.go('persons');
+      });
+  };
+
+  this.createPerson = function() {
+    personsService.createPerson(this.person)
       .then(function() {
         $state.go('persons');
       });

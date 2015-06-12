@@ -4,5 +4,5 @@
   </div>
 </form>
 <table class="table table-striped">
-    <tr ng-repeat="person in ctrl.persons | filter: ctrl.filter"><td><a ui-sref="person({name:person.name})">{{ person.name }}</a></td></tr>
+    <tr ng-repeat="person in ctrl.persons | filter: ctrl.filter"><td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td></tr>
 </table>
