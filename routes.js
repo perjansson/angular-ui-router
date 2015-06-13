@@ -47,7 +47,9 @@ module.exports = {
 	},
 
 	createPerson: function(req, res) {
-		console.log("Create person: " + JSON.stringify(req.body));
+		var newPerson = req.body;
+		newPerson.key = dummyPersons.length + 1 + "";
+		dummyPersons.push(newPerson);
 		res.end("Created person");
 	}
 

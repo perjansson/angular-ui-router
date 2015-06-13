@@ -42,7 +42,7 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 			controller: 'PersonsCtrl as ctrl'
 		})
 
-		.state('edit-person', {
+		.state('editperson', {
 			url: '/person/:key/edit',
 			resolve: {
 				persons: function () { return []; },
@@ -51,7 +51,25 @@ angular.module('personApp').config(['$stateProvider', '$urlRouterProvider', func
 				}],
 				filter: function () { return ""; }
 			},
-			templateUrl: 'partials/edit-person.html',
+			templateUrl: 'partials/editperson.html',
+			controller: 'PersonsCtrl as ctrl'
+		})
+
+		.state('createperson', {
+			url: '/persons',
+			resolve: {
+				persons: function () { return []; },
+				person: function() {
+					return {
+						data: {
+							name: "",
+							phone: ""
+						}
+					};
+				},
+				filter: function () { return ""; }
+			},
+			templateUrl: 'partials/editperson.html',
 			controller: 'PersonsCtrl as ctrl'
 		});
 

@@ -6,3 +6,6 @@
 <table class="table table-striped">
     <tr ng-repeat="person in ctrl.persons | filter: ctrl.filter"><td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td></tr>
 </table>
+<div class="pull-right control-panel">
+	<button type="button" class="btn btn-primary" ui-sref="createperson">Create</button>
+</div>

@@ -3,22 +3,30 @@ angular.module('personApp').controller('PersonsCtrl', ['$state', 'PersonsService
   this.persons = persons.data;
   this.person = person.data;
   this.filter = filter;
-
   this.personQuery = $state.params.query;
 
-  this.updatePerson = function() {
-    personsService.updatePerson(this.person)
-      .then(function() {
-        $state.go('persons');
-      });
+  this.savePerson = function() {
+    console.log(this.person.key);
+    if (this.person.key) {
+      updatePerson(this.person);
+    } else {
+      createPerson(this.person);
+    }
   };
 
-  this.createPerson = function() {
-    personsService.createPerson(this.person)
+  function updatePerson(person) {
+    personsService.updatePerson(person)
       .then(function() {
         $state.go('persons');
       });
-  };
+  }
+
+  function createPerson(person) {
+    personsService.createPerson(person)
+      .then(function() {
+        $state.go('persons');
+      });
+  }
     
   this.searchPerson = function(query) {
     if (query.length) {
