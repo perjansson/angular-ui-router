@@ -23,7 +23,9 @@ gulp.task('start', function () {
 	});
 });
 
-gulp.task('e2e', ['start'], function(cb) {
+gulp.task('webdriver_update', webdriver_update);
+
+gulp.task('e2e', ['webdriver_update', 'start'], function(cb) {
     gulp.src(['test/persons-spec.js'])
     .pipe(protractor({
         configFile: 'test/protractor.config.js',
