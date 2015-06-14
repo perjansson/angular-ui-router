@@ -25,11 +25,12 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "nodemon": "^1.2.1",
     "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
     "gulp-jshint": "^1.11.0",
     "gulp-livereload": "^3.8.0",
     "gulp-protractor": "^1.0.0",
+    "nodemon": "^1.2.1",
     "protractor": "^2.1.0"
   }
 }
