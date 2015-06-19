@@ -1,1 +1,8 @@
-var personApp = angular.module('personApp', ['ui.router']);
+(function() {
+  'use strict';
+
+  angular.module('personApp', [
+    'ui.router'
+  ]);
+
+})();

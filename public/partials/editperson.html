@@ -1,18 +1,18 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Person #<span ng-bind="ctrl.person.key"></span></div>
+  <div class="panel-heading">Person #<span ng-bind="vm.person.key"></span></div>
   <div class="panel-body">
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" name="name" ng-model="ctrl.person.name">
+      <input type="text" class="form-control" name="name" ng-model="vm.person.name">
     </div>
     <div>
       <label for="phone">Phone:</label>
-      <input type="text" class="form-control" name="phone" ng-model="ctrl.person.phone">
+      <input type="text" class="form-control" name="phone" ng-model="vm.person.phone">
     </div>
     <div class="form-group">
       <div class="pull-right control-panel">
         <button type="button" class="btn btn-default" ui-sref="persons">Cancel</button>
-        <button type="button" class="btn btn-success" ng-click="ctrl.savePerson()">Save</button>
+        <button type="button" class="btn btn-success" ng-click="vm.savePerson()">Save</button>
       </div>
     </div>
   </div>

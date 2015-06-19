@@ -1,14 +1,14 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     livereload = require('gulp-livereload'),
-	nodemon = require('nodemon'),
-	protractor = require("gulp-protractor").protractor,
-	webdriver_standalone = require("gulp-protractor").webdriver_standalone,
-	webdriver_update = require('gulp-protractor').webdriver_update;
+    nodemon = require('nodemon'),
+    protractor = require("gulp-protractor").protractor,
+    webdriver_standalone = require("gulp-protractor").webdriver_standalone,
+    webdriver_update = require('gulp-protractor').webdriver_update;
 
-gulp.task('lint', function() { 
+gulp.task('lint', function() {
     return gulp.src('public/js/**/*.js')
-	    .pipe(jshint()) 
+	    .pipe(jshint())
 	    .pipe(jshint.reporter('default'));
 });
 
@@ -31,7 +31,7 @@ gulp.task('e2e', ['webdriver_update', 'start'], function(cb) {
         configFile: 'test/protractor.config.js',
     })).on('error', function(e) {
         console.log(e)
-    }).on('end', cb);        
+    }).on('end', cb);
 });
 
 gulp.task('default', ['watch', 'start']);

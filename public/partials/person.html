@@ -1,15 +1,15 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Person #<span ng-bind="ctrl.person.key"></span></div>
+  <div class="panel-heading">Person #<span ng-bind="vm.person.key"></span></div>
   <div class="panel-body">
     <div>
-    	<strong>Name:</strong> {{ctrl.person.name}}
+    	<strong>Name:</strong> {{vm.person.name}}
     </div>
     <div>
-    	<strong>Phone:</strong> {{ctrl.person.phone}}
+    	<strong>Phone:</strong> {{vm.person.phone}}
     </div>
     <div class="pull-right control-panel">
       <button type="button" class="btn btn-default" ui-sref="persons">Back</button>
-      <button type="button" class="btn btn-danger" ui-sref="editperson({key:ctrl.person.key})">Edit</button>
+      <button type="button" class="btn btn-danger" ui-sref="editperson({key:vm.person.key})">Edit</button>
   	</div>
   </div>
 </div>
