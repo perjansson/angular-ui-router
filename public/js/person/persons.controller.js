@@ -9,8 +9,8 @@
 
     var vm = this;
 
-    vm.persons = persons.data;
-    vm.person = person.data;
+    vm.persons = persons;
+    vm.person = person;
     vm.filter = filter;
     vm.personQuery = $state.params.query;
     vm.savePerson = savePerson;
