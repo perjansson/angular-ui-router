@@ -3,9 +3,9 @@
 
   angular
     .module('personApp')
-    .controller('PersonsCtrl', ['$state', 'PersonsService', 'persons', 'person', 'filter', PersonsCtrl]);
+    .controller('PersonsController', ['$state', 'personsService', 'persons', 'person', 'filter', PersonsController]);
 
-  function PersonsCtrl($state, personsService, persons, person, filter) {
+  function PersonsController($state, personsService, persons, person, filter) {
 
     var vm = this;
 
@@ -16,9 +16,8 @@
     vm.savePerson = savePerson;
     vm.searchPerson = searchPerson;
 
-
     function savePerson() {
-      console.log(vm.person.key);
+      console.log(vm.person);
       if (vm.person.key) {
         updatePerson(vm.person);
       } else {

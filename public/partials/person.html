@@ -7,6 +7,9 @@
     <div>
     	<strong>Phone:</strong> {{vm.person.phone}}
     </div>
+    <div>
+      <i>All info in one go: {{vm.person.getAllInfo()}}</i>
+    </div>
     <div class="pull-right control-panel">
       <button type="button" class="btn btn-default" ui-sref="persons">Back</button>
       <button type="button" class="btn btn-danger" ui-sref="editperson({key:vm.person.key})">Edit</button>
