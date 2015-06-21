@@ -17,7 +17,6 @@
     vm.searchPerson = searchPerson;
 
     function savePerson() {
-      console.log(vm.person);
       if (vm.person.key) {
         updatePerson(vm.person);
       } else {
