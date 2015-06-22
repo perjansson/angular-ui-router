@@ -3,9 +3,9 @@
 
 	angular
 		.module('personApp')
-		.service('personsService', ['$http', 'personFactory', personsService]);
+		.service('personsService', ['$http', 'Person', personsService]);
 
-		function personsService($http, personFactory) {
+		function personsService($http, Person) {
 
 			this.createPerson = function(person) {
 				return $http.post('/persons', person);
@@ -17,17 +17,17 @@
 
 			this.searchPersons = function(query) {
 				return $http.get('/persons/' + query)
-          .then(personFactory.createFromJsonResponse)
+          .then(Person.createFromJsonResponse)
 			};
 
 			this.getPersons = function() {
 				return $http.get('/persons')
-          .then(personFactory.createFromJsonResponse)
+          .then(Person.createFromJsonResponse)
 			};
 
 			this.getPerson = function(key) {
 				return $http.get('/person/' + key)
-          .then(personFactory.createFromJsonResponse);
+          .then(Person.createFromJsonResponse);
 			};
 
 	};

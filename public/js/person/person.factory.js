@@ -3,7 +3,7 @@
 
   angular
     .module('personApp')
-    .factory('personFactory', personFactory);
+    .factory('Person', personFactory);
 
   function personFactory() {
 
@@ -11,29 +11,25 @@
       this.key = key;
       this.name = name;
       this.phone = phone;
-      this.getAllInfo = function() {
-        return "Key: " + this.key + ", Name: " + this.name + ", Phone: " + this.phone;
-      }
     }
 
-    function create(key, name, phone) {
-      return new Person(key, name, phone);
+    Person.prototype = {
+      getAllInfo : function() {
+        return "Key: " + this.key + ", Name: " + this.name + ", Phone: " + this.phone;
+      }
     };
 
-    function createFromJsonResponse(response) {
+    Person.createFromJsonResponse = function(response) {
       var json = (response.data !== undefined) ? response.data : response;
       if (angular.isArray(json)) {
         return json
-          .map(createFromJsonResponse)
+          .map(Person.createFromJsonResponse)
           .filter(Boolean);
       }
-      return create(json.key, json.name, json.phone);
+      return new Person(json.key, json.name, json.phone);
     };
 
-    return {
-      create : create,
-      createFromJsonResponse: createFromJsonResponse
-    }
+    return Person;
 
   };
 
