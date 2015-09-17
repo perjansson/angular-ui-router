@@ -20,7 +20,7 @@
 					templateUrl: 'partials/persons.html',
 					controller: 'PersonsController as vm'
 				})
-
+				
 				.state('search', {
 					url: '/persons/:query',
 					resolve: {

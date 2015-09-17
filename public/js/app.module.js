@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('personApp', [
-    'ui.router'
+    'ui.router',
+    'ngAnimate'
   ]);
 
 })();

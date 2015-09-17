@@ -1,11 +1,15 @@
-<form>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Filter persons" ng-model="vm.filter">
+<div class="person-form animated" ng-class="{ 'up': vm.filter }">
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" placeholder="Filter persons" ng-model="vm.filter">
+    </div>
+  </form>
+  <div ng-show="vm.filter">
+    <table class="table table-striped">
+        <tr ng-repeat="person in vm.persons | filter: vm.filter"><td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td></tr>
+    </table>
   </div>
-</form>
-<table class="table table-striped">
-    <tr ng-repeat="person in vm.persons | filter: vm.filter"><td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td></tr>
-</table>
-<div class="pull-right control-panel">
-	<button type="button" class="btn btn-primary" ui-sref="createperson">Create</button>
+  <div class="pull-right control-panel">
+  	<button type="button" class="btn btn-primary" ui-sref="createperson">Create</button>
+  </div>
 </div>
