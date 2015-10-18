@@ -1,35 +1,47 @@
 (function() {
   'use strict';
 
-	angular
-		.module('personApp')
-		.service('personsService', ['$http', 'Person', personsService]);
+  angular
+    .module('personApp')
+    .service('personsService', ['$http', '$q', 'Person', personsService]);
 
-		function personsService($http, Person) {
+  function personsService($http, $q, Person) {
 
-			this.createPerson = function(person) {
-				return $http.post('/persons', person);
-			};
+    var fakePersons = [];
+    _(15000).times(function(n) {
+      fakePersons.push({
+        key: n,
+        name: "Person " + n,
+        phone: n
+      })
+    })
 
-			this.updatePerson = function(person) {
-				return $http.post('/person/' + person.key, person);
-			};
+    this.createPerson = function(person) {
+      return $http.post('/persons', person);
+    };
 
-			this.searchPersons = function(query) {
-				return $http.get('/persons/' + query)
-          .then(Person.createFromJsonResponse)
-			};
+    this.updatePerson = function(person) {
+      return $http.post('/person/' + person.key, person);
+    };
 
-			this.getPersons = function() {
-				return $http.get('/persons')
-          .then(Person.createFromJsonResponse)
-			};
+    this.searchPersons = function(query) {
+      return $http.get('/persons/' + query)
+        .then(Person.createFromJsonResponse)
+    };
 
-			this.getPerson = function(key) {
-				return $http.get('/person/' + key)
-          .then(Person.createFromJsonResponse);
-			};
+    this.getPersons = function() {
+      /*return $http.get('/persons')
+          .then(Person.createFromJsonResponse)*/
+      var deferred = $q.defer();
+      deferred.resolve(fakePersons);
+      return deferred.promise;
+    };
 
-	};
+    this.getPerson = function(key) {
+      return $http.get('/person/' + key)
+        .then(Person.createFromJsonResponse);
+    };
+
+  };
 
 })();
