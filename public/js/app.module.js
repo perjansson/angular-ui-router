@@ -3,7 +3,8 @@
 
   angular.module('personApp', [
     'ui.router',
-    'ngAnimate'
+    'ngAnimate',
+    'gc.fastRepeat'
   ]);
 
 })();

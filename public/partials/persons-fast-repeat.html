@@ -1,0 +1,24 @@
+<div class="person-form animated" ng-class="{ 'up': vm.filter }">
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" placeholder="Filter persons" ng-model="vm.filter">
+    </div>
+  </form>
+  <div>
+    <table class="table table-striped">
+        <tr fast-repeat="person in vm.persons | filter: vm.filter">
+          <td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td>
+          <td>{{ person.key | number:0 }}</td>
+          <td>{{ person.phone | number:0 }}</td>
+          <td>{{ person.key | number:0 }}</td>
+          <td>{{ person.phone | number:0 }}</td>
+          <td>{{ person.key | number:0 }}</td>
+          <td>{{ person.phone | number:0 }}</td>
+          <td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td>
+        </tr>
+    </table>
+  </div>
+  <div class="pull-right control-panel">
+  	<button type="button" class="btn btn-primary" ui-sref="createperson">Create</button>
+  </div>
+</div>

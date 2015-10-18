@@ -13,8 +13,12 @@
   animation-iteration-count: 1;
 }
 
+.person-form.up input {
+	height: 25px;
+}
+
 .ng-hide-remove {
-    transition: 1s linear opacity;
+    transition: 1s linear all;
     opacity: 0;
 }
 

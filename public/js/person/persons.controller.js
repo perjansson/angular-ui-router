@@ -6,7 +6,6 @@
     .controller('PersonsController', ['$state', 'personsService', 'persons', 'person', 'filter', PersonsController]);
 
   function PersonsController($state, personsService, persons, person, filter) {
-
     var vm = this;
 
     vm.persons = persons;
