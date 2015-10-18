@@ -42,6 +42,23 @@
       controller: 'PersonsController as vm'
     })
 
+    .state('persons-react', {
+      url: '/persons-react',
+      resolve: {
+        persons: ['personsService', function(personsService) {
+          return personsService.getPersons();
+        }],
+        person: function() {
+          return {};
+        },
+        filter: function() {
+          return "";
+        }
+      },
+      templateUrl: 'partials/persons-react.html',
+      controller: 'PersonsController as vm'
+    })
+
     .state('search', {
       url: '/persons/:query',
       resolve: {
