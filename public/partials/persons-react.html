@@ -4,19 +4,12 @@
       <input type="text" class="form-control input-lg" placeholder="Filter persons" ng-model="vm.filter">
     </div>
   </form-->
-  <h1>Angular fast-repeat rendering {{vm.persons.length}} rows</h1>
-  <div>
+  <h1>React rendering {{vm.persons.length}} rows</h1>
+
+  <person-table persons="vm.persons" />
+
+  <!--div>
     <table class="table table-striped">
-      <thead>
-        <th>Name</th>
-        <th>Key</th>
-        <th>Phone</th>
-        <th>Key</th>
-        <th>Phone</th>
-        <th>Key</th>
-        <th>Phone</th>
-        <th>Name</th>
-      </thead>
         <tr fast-repeat="person in vm.persons | filter: vm.filter">
           <td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td>
           <td>{{ person.key | number:0 }}</td>
@@ -28,8 +21,8 @@
           <td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td>
         </tr>
     </table>
-  </div>
-  <div class="pull-right control-panel">
+  </div-->
+  <!--div class="pull-right control-panel">
   	<button type="button" class="btn btn-primary" ui-sref="createperson">Create</button>
-  </div>
+  </div-->
 </div>

@@ -14,6 +14,7 @@
     vm.personQuery = $state.params.query;
     vm.savePerson = savePerson;
     vm.searchPerson = searchPerson;
+    vm.helloPerson = { fname: 'Clark', lname: 'Kent' };
 
     function savePerson() {
       if (vm.person.key) {

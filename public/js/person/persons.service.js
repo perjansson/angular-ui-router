@@ -38,8 +38,12 @@
     };
 
     this.getPerson = function(key) {
-      return $http.get('/person/' + key)
-        .then(Person.createFromJsonResponse);
+      /*return $http.get('/person/' + key)
+        .then(Person.createFromJsonResponse);*/
+      var person = _.where(fakePersons, { key: parseInt(key) })[0];
+      var deferred = $q.defer();
+      deferred.resolve(person);
+      return deferred.promise;
     };
 
   };
