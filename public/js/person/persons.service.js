@@ -8,7 +8,7 @@
   function personsService($http, $q, Person) {
 
     var fakePersons = [];
-    _(15000).times(function(n) {
+    _(10000).times(function(n) {
       fakePersons.push({
         key: n,
         name: "Person " + n,
