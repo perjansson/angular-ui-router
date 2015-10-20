@@ -12,7 +12,7 @@
         url: '/persons-ng-repeat',
         resolve: {
           persons: ['personsService', function(personsService) {
-            return personsService.getPersons();
+            return [];
           }],
           person: function() {
             return {};

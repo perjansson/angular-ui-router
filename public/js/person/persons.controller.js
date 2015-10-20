@@ -3,9 +3,9 @@
 
   angular
     .module('personApp')
-    .controller('PersonsController', ['$state', 'personsService', 'persons', 'person', 'filter', PersonsController]);
+    .controller('PersonsController', ['$state', '$interval', 'personsService', 'persons', 'person', 'filter', PersonsController]);
 
-  function PersonsController($state, personsService, persons, person, filter) {
+  function PersonsController($state, $interval, personsService, persons, person, filter) {
     var vm = this;
 
     vm.persons = persons;
@@ -14,7 +14,24 @@
     vm.personQuery = $state.params.query;
     vm.savePerson = savePerson;
     vm.searchPerson = searchPerson;
-    vm.helloPerson = { fname: 'Clark', lname: 'Kent' };
+    vm.onClickPerson = onClickPerson;
+
+    activate();
+
+    $interval(activate, 10000);
+
+    function activate() {
+      personsService.getPersons()
+        .then(function(persons) {
+          vm.persons = _.sortBy(persons, function(person) {
+      			return person.name;
+      		});
+        });
+    }
+
+    function onClickPerson(person) {
+      $state.go('person', { key:person.key });
+    }
 
     function savePerson() {
       if (vm.person.key) {

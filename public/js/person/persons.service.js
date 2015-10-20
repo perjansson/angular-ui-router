@@ -7,14 +7,21 @@
 
   function personsService($http, $q, Person) {
 
+    var counter = 0;
     var fakePersons = [];
-    _(10000).times(function(n) {
-      fakePersons.push({
-        key: n,
-        name: "Person " + n,
-        phone: n
+
+    function generateFakePersons() {
+      fakePersons = [];
+      _(10000).times(function(n) {
+        counter = counter + 1;
+        fakePersons.push({
+          key: counter,
+          name: counter + " Person",
+          phone: counter
+        })
       })
-    })
+      return fakePersons;
+    }
 
     this.createPerson = function(person) {
       return $http.post('/persons', person);
@@ -33,7 +40,7 @@
       /*return $http.get('/persons')
           .then(Person.createFromJsonResponse)*/
       var deferred = $q.defer();
-      deferred.resolve(fakePersons);
+      deferred.resolve(generateFakePersons());
       return deferred.promise;
     };
 

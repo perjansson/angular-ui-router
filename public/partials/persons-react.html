@@ -6,23 +6,5 @@
   </form-->
   <h1>React rendering {{vm.persons.length}} rows</h1>
 
-  <person-table persons="vm.persons" />
-
-  <!--div>
-    <table class="table table-striped">
-        <tr fast-repeat="person in vm.persons | filter: vm.filter">
-          <td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td>
-          <td>{{ person.key | number:0 }}</td>
-          <td>{{ person.phone | number:0 }}</td>
-          <td>{{ person.key | number:0 }}</td>
-          <td>{{ person.phone | number:0 }}</td>
-          <td>{{ person.key | number:0 }}</td>
-          <td>{{ person.phone | number:0 }}</td>
-          <td><a ui-sref="person({ key:person.key })">{{ person.name }}</a></td>
-        </tr>
-    </table>
-  </div-->
-  <!--div class="pull-right control-panel">
-  	<button type="button" class="btn btn-primary" ui-sref="createperson">Create</button>
-  </div-->
+  <person-table persons="vm.persons" callback="vm.onClickPerson"/>
 </div>
