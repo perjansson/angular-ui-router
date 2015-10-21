@@ -18,7 +18,7 @@
 
     activate();
 
-    $interval(activate, 10000);
+    //$interval(activate, 10000);
 
     function activate() {
       personsService.getPersons()
