@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
+    templateCache = require('gulp-angular-templatecache'),
+    minifyHTML = require('gulp-minify-html'),
     livereload = require('gulp-livereload'),
     nodemon = require('nodemon'),
     protractor = require("gulp-protractor").protractor,
@@ -10,6 +12,19 @@ gulp.task('lint', function() {
     return gulp.src('public/js/**/*.js')
 	    .pipe(jshint())
 	    .pipe(jshint.reporter('default'));
+});
+
+gulp.task('template_cache', function () {
+  return gulp.src('public/partials/**/*.html')
+    .pipe(minifyHTML({
+        quotes: true
+      }))
+    .pipe(templateCache('templates.js', {
+            module: 'personApp',
+            root: 'partials/',
+            standAlone: false
+        }))
+    .pipe(gulp.dest('public/js/templates/'));
 });
 
 gulp.task('watch', function() {
