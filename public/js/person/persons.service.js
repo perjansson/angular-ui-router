@@ -12,7 +12,7 @@
 
     function generateFakePersons() {
       fakePersons = [];
-      _(10000).times(function(n) {
+      _(100).times(function(n) {
         counter = counter + 1;
         fakePersons.push({
           key: counter,
