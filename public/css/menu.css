@@ -7,8 +7,8 @@
 }
 
 .content {
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
 }
 
 .content.sidenav-open {
@@ -22,8 +22,8 @@
   left: 0;
   top: 65px;
   bottom: 0;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
   box-shadow: 0 8px 17px rgba(0,0,0,.2);
   -webkit-box-shadow: 0 8px 17px rgba(0,0,0,.2);
   background: #fff;
