@@ -1,0 +1,43 @@
+.navbar .hamburger-toggle {
+  top: 18px;
+}
+
+.navbar .hamburger-toggle .material-design-hamburger__layer {
+  background: #666;
+}
+
+.content {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+
+.content.sidenav-open {
+  padding-left: 330px;
+}
+
+.sidenav {
+  width: 0;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 65px;
+  bottom: 0;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 17px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 8px 17px rgba(0,0,0,.2);
+  background: #fff;
+  z-index: 10;
+}
+
+.sidenav.open {
+  width: 300px;
+}
+
+.navbar {
+  z-index: 100;
+}
+
+.navbar-brand {
+  margin-left: 25px !important;
+}

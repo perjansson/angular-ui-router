@@ -4,9 +4,6 @@ var app = express();
 var routes = require('./routes');
 
 app.use("/", express.static(__dirname + "/public/"));
-app.use("/", express.static(__dirname + "/node_modules/bootstrap/dist/"));
-app.use("/", express.static(__dirname + "/node_modules/angular/"));
-app.use("/", express.static(__dirname + "/node_modules/angular-ui-router/release/"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

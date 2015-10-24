@@ -5,7 +5,8 @@
     'ui.router',
     'ngAnimate',
     'gc.fastRepeat',
-    'react'
+    'react',
+    'ngHamburger'
   ]);
 
 })();

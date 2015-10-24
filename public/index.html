@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<title>A persons app</title>
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">¨
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
 	<link rel="stylesheet" type="text/css" href="animate.css">
+	<link rel="stylesheet" type="text/css" href="css/angular-hamburger-toggle.css">
 </head>
 
 <body ng-app="personApp">
-	<div class="container">
-		<div ui-view></div>
+	<div class="header">
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<hamburger-toggle state="tgState" class="hamburger-toggle"></hamburger-toggle>
+					<a class="navbar-brand">
+              Persons app
+            </a>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<div class="sidenav" ng-class="{open: tgState}">
+		<ul class="nav nav-pills nav-stacked">
+			<li role="presentation" ui-sref-active="active"><a ui-sref="persons-ng-repeat">Ng-repeat</a></li>
+			<li role="presentation" ui-sref-active="active"><a ui-sref="persons-fast-repeat">Fast-repeat</a></li>
+			<li role="presentation" ui-sref-active="active"><a ui-sref="persons-react">React</a></li>
+		</ul>
+	</div>
+
+	<div class="content" ng-class="{'sidenav-open': tgState}">
+		<div class="container panel">
+			<div ui-view></div>
+		</div>
+	</div>
+
 	<script src="lib/jquery-2.1.4.js"></script>
 	<script src="lib/angular.js"></script>
 	<script src="lib/angular-ui-router.min.js"></script>
@@ -23,6 +50,7 @@
 	<script src="lib/react.min.js"></script>
 	<script src="lib/ngReact.js"></script>
 	<script src="lib/underscore-min.js"></script>
+	<script src="lib/angular-hamburger-toggle.js"></script>
 
 	<script src="js/app.module.js"></script>
 	<script src="js/templates/templates.js"></script>
@@ -32,4 +60,5 @@
 	<script src="js/person/person.factory.js"></script>
 	<script src="js/person/person.react.jsx.js"></script>
 </body>
+
 </html>
