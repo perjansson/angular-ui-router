@@ -21,6 +21,7 @@
     "jquery": "~2.1.4",
     "ngReact": "~0.2.0",
     "react": "~0.14.0",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "angular-resource": "~1.4.7"
   }
 }
