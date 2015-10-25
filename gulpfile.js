@@ -3,6 +3,10 @@ var gulp = require('gulp'),
   growl = require('gulp-notify-growl'),
   jshint = require('gulp-jshint'),
   jscs = require('gulp-jscs'),
+  gulpprint = require('gulp-print'),
+  gulpif = require('gulp-if'),
+  args = require('yargs').argv,
+
   templateCache = require('gulp-angular-templatecache'),
   minifyHTML = require('gulp-minify-html'),
   livereload = require('gulp-livereload'),
@@ -16,9 +20,10 @@ gulp.task('vet', function() {
       './public/js/**/*.js',
       './*.js'
     ])
+    .pipe(gulpif(args.verbose, gulpprint()))
     .pipe(jscs())
-    //.pipe(jshint())
-    //.pipe(jshint.reporter('jshint-stylish'));
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('template_cache', function() {
