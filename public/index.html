@@ -19,7 +19,7 @@
 		<div class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<hamburger-toggle state="tgState" class="hamburger-toggle"></hamburger-toggle>
+					<hamburger-toggle state="hamburgerOpenState" class="hamburger-toggle"></hamburger-toggle>
 					<a class="navbar-brand">
               Persons app
             </a>
@@ -28,15 +28,15 @@
 		</div>
 	</div>
 
-	<div class="sidenav" ng-class="{open: tgState}">
+	<div class="sidenav persons-nav" ng-class="{open: hamburgerOpenState}">
 		<ul class="nav nav-pills nav-stacked">
-			<li role="presentation" ui-sref-active="active" ng-click="tgState = false"><a ui-sref="persons-ng-repeat">Ng-repeat</a></li>
-			<li role="presentation" ui-sref-active="active" ng-click="tgState = false"><a ui-sref="persons-fast-repeat">Fast-repeat</a></li>
-			<li role="presentation" ui-sref-active="active" ng-click="tgState = false"><a ui-sref="persons-react">React</a></li>
+			<li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-ng-repeat">Ng-repeat</a></li>
+			<li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-fast-repeat">Fast-repeat</a></li>
+			<li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-react">React</a></li>
 		</ul>
 	</div>
 
-	<div class="content" ng-class="{'sidenav-open': tgState}">
+	<div class="content" ng-class="{'sidenav-open': hamburgerOpenState}">
 		<div class="container panel">
 			<div ui-view></div>
 		</div>

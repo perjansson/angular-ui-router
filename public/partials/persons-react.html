@@ -1,9 +1,9 @@
 <div class="person-form animated" ng-class="{ 'up': vm.filter }">
-  <!--form>
+  <form>
     <div class="form-group">
       <input type="text" class="form-control input-lg" placeholder="Filter persons" ng-model="vm.filter">
     </div>
-  </form-->
+  </form>
   <h1>React rendering {{vm.persons.length}} rows</h1>
 
   <person-table persons="vm.persons" callback="vm.onClickPerson"/>
