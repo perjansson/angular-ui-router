@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
   args = require('yargs').argv,
   nodemon = require('nodemon'),
+  config = require('./gulp.config')(),
   $ = require('gulp-load-plugins')({
     lazy: true
   }),
@@ -9,10 +10,7 @@ var gulp = require('gulp'),
   webdriver_update = $.protractor.webdriver_update;
 
 gulp.task('vet', function() {
-  return gulp.src([
-      './public/js/**/*.js',
-      './*.js'
-    ])
+  return gulp.src(config.alljs)
     .pipe($.if(args.verbose, $.print()))
     .pipe($.jscs())
     .pipe($.jshint())
