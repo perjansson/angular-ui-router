@@ -1,37 +1,30 @@
 var gulp = require('gulp'),
-  notify = require('gulp-notify'),
-  growl = require('gulp-notify-growl'),
-  jshint = require('gulp-jshint'),
-  jscs = require('gulp-jscs'),
-  gulpprint = require('gulp-print'),
-  gulpif = require('gulp-if'),
   args = require('yargs').argv,
-
-  templateCache = require('gulp-angular-templatecache'),
-  minifyHTML = require('gulp-minify-html'),
-  livereload = require('gulp-livereload'),
   nodemon = require('nodemon'),
-  protractor = require("gulp-protractor").protractor,
-  webdriver_standalone = require("gulp-protractor").webdriver_standalone,
-  webdriver_update = require('gulp-protractor').webdriver_update;
+  $ = require('gulp-load-plugins')({
+    lazy: true
+  }),
+
+  webdriver_standalone = $.protractor.webdriver_standalone,
+  webdriver_update = $.protractor.webdriver_update;
 
 gulp.task('vet', function() {
   return gulp.src([
       './public/js/**/*.js',
       './*.js'
     ])
-    .pipe(gulpif(args.verbose, gulpprint()))
-    .pipe(jscs())
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+    .pipe($.if(args.verbose, $.print()))
+    .pipe($.jscs())
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('template_cache', function() {
   return gulp.src('public/partials/**/*.html')
-    .pipe(minifyHTML({
+    .pipe($.minifyHtml({
       quotes: true
     }))
-    .pipe(templateCache('templates.js', {
+    .pipe($.angularTemplatecache('templates.js', {
       module: 'personApp',
       root: 'partials/',
       standAlone: false
@@ -40,8 +33,8 @@ gulp.task('template_cache', function() {
 });
 
 gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch(['public/**/*']).on('change', livereload.changed);
+  $.livereload.listen();
+  gulp.watch(['public/**/*']).on('change', $.livereload.changed);
 });
 
 gulp.task('start', function() {
