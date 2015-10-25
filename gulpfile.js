@@ -57,6 +57,17 @@ gulp.task('inject', ['wiredep'], function() {
     .pipe(gulp.dest(config.client));
 });
 
+gulp.task('build', ['template_cache', 'inject'], function() {
+  var assets = $.useref.assets();
+
+  return gulp.src(config.index)
+    .pipe($.plumber())
+    .pipe(assets)
+    .pipe(assets.restore())
+    .pipe($.useref())
+    .pipe(gulp.dest(config.dist));
+});
+
 gulp.task('webdriver_update', webdriver_update);
 
 gulp.task('e2e', ['webdriver_update', 'start'], function(cb) {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>A persons app</title>
+
+  <link rel="stylesheet" href="css/lib.css">
+
+	<link rel="stylesheet" href="css/app.css">
+</head>
+
+<body ng-app="personApp">
+	<div class="header">
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<hamburger-toggle state="hamburgerOpenState" class="hamburger-toggle"></hamburger-toggle>
+					<a class="navbar-brand">
+              Persons app
+            </a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-include="'partials/nav.html'"></div>
+
+	<div class="content" ng-class="{'sidenav-open': hamburgerOpenState}">
+		<div class="container-fluid">
+			<div ui-view></div>
+		</div>
+	</div>
+
+  <script src="js/lib.js"></script>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

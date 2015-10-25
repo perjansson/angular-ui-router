@@ -12,7 +12,7 @@ module.exports = function() {
       './*.js'
     ],
     client: client,
-    index: client + 'index.html',
+    index: 'index.html',
     css: [
     	client + 'css/style.css',
     	client + 'css/menu.css'
@@ -22,6 +22,7 @@ module.exports = function() {
       clientApp + '**/*.js',
       '!' + clientApp + '**/*.spec.js'
     ],
+    dist: 'dist',
 
     /**
     * Bower and NPM locations
