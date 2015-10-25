@@ -7,11 +7,16 @@
 
 	<title>A persons app</title>
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- bower:css -->
+	<link rel="stylesheet" href="../bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.css" />
+	<link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+
+	<!-- inject:css -->
+	<!-- endbinject -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
-	<link rel="stylesheet" type="text/css" href="animate.css">
-	<link rel="stylesheet" type="text/css" href="css/angular-hamburger-toggle.css">
 </head>
 
 <body ng-app="personApp">
@@ -28,13 +33,7 @@
 		</div>
 	</div>
 
-	<div class="sidenav persons-nav" ng-class="{open: hamburgerOpenState}">
-		<ul class="nav nav-pills nav-stacked">
-			<li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-ng-repeat">Ng-repeat</a></li>
-			<li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-fast-repeat">Fast-repeat</a></li>
-			<li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-react">React</a></li>
-		</ul>
-	</div>
+	<div ng-include="'partials/nav.html'"></div>
 
 	<div class="content" ng-class="{'sidenav-open': hamburgerOpenState}">
 		<div class="container-fluid">
@@ -42,23 +41,28 @@
 		</div>
 	</div>
 
-	<script src="lib/jquery-2.1.4.js"></script>
-	<script src="lib/angular.js"></script>
-	<script src="lib/angular-ui-router.min.js"></script>
-	<script src="lib/angular-animate.js"></script>
-	<script src="lib/fastRepeat.min.js"></script>
-	<script src="lib/react.min.js"></script>
-	<script src="lib/ngReact.js"></script>
-	<script src="lib/underscore-min.js"></script>
-	<script src="lib/angular-hamburger-toggle.js"></script>
+	<!-- bower:js -->
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../bower_components/angular-animate/angular-animate.js"></script>
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.js"></script>
+	<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../bower_components/react/react.js"></script>
+	<script src="../bower_components/ngReact/ngReact.js"></script>
+	<script src="../bower_components/underscore/underscore.js"></script>
+	<!-- endbower -->
 
-	<script src="js/app.module.js"></script>
-	<script src="js/templates/templates.js"></script>
-	<script src="js/router.config.js"></script>
-	<script src="js/person/persons.controller.js"></script>
-	<script src="js/person/persons.service.js"></script>
-	<script src="js/person/person.factory.js"></script>
-	<script src="js/person/person.react.jsx.js"></script>
+	<!-- inject:js -->
+	<script src="/public/js/app.module.js"></script>
+	<script src="/public/js/router.config.js"></script>
+	<script src="/public/js/person/person.factory.js"></script>
+	<script src="/public/js/person/person.react.js"></script>
+	<script src="/public/js/person/person.react.jsx.js"></script>
+	<script src="/public/js/person/persons.controller.js"></script>
+	<script src="/public/js/person/persons.service.js"></script>
+	<script src="/public/js/templates/templates.js"></script>
+	<!-- endinject -->
 </body>
 
 </html>

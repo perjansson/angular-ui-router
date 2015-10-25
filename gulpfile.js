@@ -41,6 +41,16 @@ gulp.task('start', function() {
   });
 });
 
+gulp.task('wiredep', function() {
+  var options = config.getWiredepDefaultOptions();
+  var wiredep = require('wiredep').stream;
+
+  return gulp.src(config.index)
+    .pipe(wiredep(options))
+    .pipe($.inject(gulp.src(config.js)))
+    .pipe(gulp.dest(config.client));
+});
+
 gulp.task('webdriver_update', webdriver_update);
 
 gulp.task('e2e', ['webdriver_update', 'start'], function(cb) {

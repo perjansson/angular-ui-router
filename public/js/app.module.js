@@ -4,7 +4,7 @@
   angular.module('personApp', [
     'ui.router',
     'ngAnimate',
-    'gc.fastRepeat',
+    //'gc.fastRepeat',
     'react',
     'ngHamburger'
   ]);

@@ -1,0 +1,26 @@
+{
+  "name": "angular-ui-router",
+  "description": "A sample project showing AngularJS with UI Router",
+  "main": "server.js",
+  "authors": [
+    "Per Jansson"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/perjansson/angular-ui-router",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-fast-repeat": "~0.0.18",
+    "angular-hamburger-toggle": "~0.2.0",
+    "angular-ui": "~0.4.0",
+    "angular-ui-router": "~0.2.15",
+    "animate.css": "~3.4.0",
+    "bootstrap": "3.3.4",
+    "jquery": "~2.1.4",
+    "ngReact": "~0.2.0",
+    "react": "~0.14.0",
+    "underscore": "~1.8.3"
+  }
+}

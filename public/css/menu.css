@@ -24,7 +24,7 @@
   -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
   background: #fff;
   z-index: 10;
-  border-top-right-radius: 10px;
+  border-top-right-radius: 0px;
 }
 .sidenav.open {
   left: 0px;
@@ -35,7 +35,9 @@
 .navbar-brand {
   margin-left: 25px !important;
 }
-.persons-nav .nav-pills>li.active>a, .persons-nav .nav-pills>li.active>a:focus, .persons-nav .nav-pills>li.active>a:hover {
+.persons-nav .nav-pills>li.active>a,
+.persons-nav .nav-pills>li.active>a:focus,
+.persons-nav .nav-pills>li.active>a:hover {
   color: #fff;
   background-color: #0A3A63;
 }
