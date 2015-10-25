@@ -51,6 +51,12 @@ gulp.task('wiredep', function() {
     .pipe(gulp.dest(config.client));
 });
 
+gulp.task('inject', ['wiredep'], function() {
+  return gulp.src(config.index)
+    .pipe($.inject(gulp.src(config.css)))
+    .pipe(gulp.dest(config.client));
+});
+
 gulp.task('webdriver_update', webdriver_update);
 
 gulp.task('e2e', ['webdriver_update', 'start'], function(cb) {

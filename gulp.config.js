@@ -8,15 +8,19 @@ module.exports = function() {
      * Files paths
      */
     alljs: [
-      './public/js/**/*.js',
+      clientApp + '**/*.js',
       './*.js'
     ],
     client: client,
     index: client + 'index.html',
+    css: [
+    	client + 'css/style.css',
+    	client + 'css/menu.css'
+    ],
     js: [
-      clientApp + '/**/*.module.js',
-      clientApp + '/**/*.js',
-      '!' + clientApp + '/**/*.spec.js'
+      clientApp + '**/*.module.js',
+      clientApp + '**/*.js',
+      '!' + clientApp + '**/*.spec.js'
     ],
 
     /**
