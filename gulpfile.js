@@ -19,9 +19,9 @@ gulp.task('vet', function() {
 
 gulp.task('template_cache', function() {
   return gulp.src('public/partials/**/*.html')
-    .pipe($.minifyHtml({
+    /*.pipe($.minifyHtml({
       quotes: true
-    }))
+    }))*/
     .pipe($.angularTemplatecache('templates.js', {
       module: 'personApp',
       root: 'partials/',
@@ -61,14 +61,14 @@ gulp.task('build', ['template_cache', 'inject'], function() {
   var assets = $.useref.assets();
 
   return gulp.src(config.index)
-    .pipe($.plumber())
-    .pipe(assets)
+    //.pipe($.plumber())
+    //.pipe(assets)
     //.pipe($.angularHtmlify())
     //.pipe($.if('*.js', $.uglify()))
     //.pipe($.if('*.css', $.minifyCss()))
-    .pipe(assets.restore())
-    .pipe($.useref())
-    .pipe(gulp.dest(config.dist));
+    //.pipe(assets.restore())
+    //.pipe($.useref())
+    //.pipe(gulp.dest(config.dist));
 });
 
 gulp.task('webdriver_update', webdriver_update);

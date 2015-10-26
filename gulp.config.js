@@ -1,6 +1,6 @@
 module.exports = function() {
-  var client = './public/';
-  var clientApp = client + 'js/';
+  var client = './';
+  var clientApp = client + 'public/js/';
 
   var config = {
 

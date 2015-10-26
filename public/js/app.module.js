@@ -3,6 +3,7 @@
 
   angular.module('personApp', [
     'ui.router',
+    'ui.bootstrap',
     'ngAnimate',
     //'gc.fastRepeat',
     'react',

@@ -1,0 +1,11 @@
+<a tabindex="-1">
+  <div style="height: 60px; width: 300px">
+    <h4>
+      <span style="display:block;" class="name" ng-bind-html="match.model.name | uibTypeaheadHighlight:query"></span>
+    </h4>
+    <span>Key: </span>
+    <span ng-bind-html="match.model.key | uibTypeaheadHighlight:query"></span>
+    <span>, Phone: </span>
+    <span ng-bind-html="match.model.phone | uibTypeaheadHighlight:query"></span>
+  </div>
+</a>

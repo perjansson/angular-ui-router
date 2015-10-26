@@ -1,7 +1,7 @@
 <div class="person-form animated" ng-class="{ 'up': vm.filter }">
   <form>
     <div class="form-group">
-      <input type="text" class="form-control input-lg" placeholder="Filter persons" ng-model="vm.filter">
+      <input type="text" ng-model="vm.person.name" class="form-control input-lg" placeholder="Filter persons" uib-typeahead="person as person.name for person in vm.persons | filter:{name:$viewValue}" | limitTo:10" typeahead-template-url="partials/findperson.html">
     </div>
   </form>
   <h1>Angular ng-repeat rendering {{vm.persons.length}} rows</h1>

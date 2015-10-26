@@ -26,6 +26,7 @@
           vm.persons = _.sortBy(persons, function(person) {
       			return person.name;
       		});
+          //console.log(JSON.stringify(vm.persons));
         });
     }
 
