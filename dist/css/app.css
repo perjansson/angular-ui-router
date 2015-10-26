@@ -53,7 +53,7 @@ a {
 }
 
 .navbar .hamburger-toggle {
-  top: 18px;
+  /*top: 18px;*/
 }
 .navbar .hamburger-toggle .material-design-hamburger__layer {
   background: #666;
@@ -66,10 +66,13 @@ a {
   padding-left: 330px;
 }
 .sidenav {
+  display: none;
+  left: 0;
+  animation-duration: 0.5s;
+
   width: 300px;
   overflow: hidden;
   position: fixed;
-  left: -300px;
   top: 65px;
   bottom: 0;
   transition: all 0.35s ease-in-out;
@@ -81,7 +84,7 @@ a {
   border-top-right-radius: 0px;
 }
 .sidenav.open {
-  left: 0px;
+  display: block;
 }
 .navbar {
   z-index: 100;

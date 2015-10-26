@@ -63,6 +63,9 @@ gulp.task('build', ['template_cache', 'inject'], function() {
   return gulp.src(config.index)
     .pipe($.plumber())
     .pipe(assets)
+    //.pipe($.angularHtmlify())
+    //.pipe($.if('*.js', $.uglify()))
+    //.pipe($.if('*.css', $.minifyCss()))
     .pipe(assets.restore())
     .pipe($.useref())
     .pipe(gulp.dest(config.dist));
