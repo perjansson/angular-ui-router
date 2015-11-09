@@ -21,7 +21,7 @@ a {
 	height: 25px;
 }
 
-.ng-hide-remove {
+/*.ng-hide-remove {
     transition: 1s linear all;
     opacity: 0;
 }
@@ -31,8 +31,8 @@ a {
 }
 
 .ng-hide-add {
-    /*transition: 1s linear opacity;
-    opacity: 1;*/
+    transition: 1s linear opacity;
+    opacity: 1;
 }
 
 .ng-hide-add-active {
@@ -41,11 +41,8 @@ a {
 
 .ng-hide-add,
 .ng-hide-remove {
-    /* this needs to be here to make it visible during the animation
-       since the .ng-hide class is already on the element rendering
-       it as hidden. */
     display:block!important;
-}
+}*/
 
 @-webkit-keyframes moveUp {
 		0%      { transform: translateY(0%); }

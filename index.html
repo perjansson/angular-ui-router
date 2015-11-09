@@ -37,7 +37,24 @@
 		</div>
 	</div>
 
-	<div ng-include="'partials/nav.html'"></div>
+	<div class="sidenav persons-nav animated bounceInLeft" ng-class="{open: hamburgerOpenState}">
+	  <ul class="nav nav-pills nav-stacked">
+	    <li><a ng-click="nav1 = !nav1">List rendering 1!</a>
+	      <div class="menuSelection" ng-show="nav1" class="animated" ng-class="{selectionOpen: nav1}">
+	        <div role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-ng-repeat">Ng-repeat</a></div>
+	        <!--li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-fast-repeat">Fast-repeat</a></li-->
+	        <div role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-react">React</a></div>
+	      </div>
+	    </li>
+	    <li><a ng-click="nav2 = !nav2">List rendering 2!</a>
+	      <div class="menuSelection" ng-show="nav2" class="animated" ng-class="{selectionOpen: nav2}">
+	        <div role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-ng-repeat">Ng-repeat</a></div>
+	        <!--li role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-fast-repeat">Fast-repeat</a></li-->
+	        <div role="presentation" ui-sref-active="active" ng-click="hamburgerOpenState = false"><a ui-sref="persons-react">React</a></div>
+	      </div>
+	    </li>
+	  </ul>
+	</div>
 
 	<div class="content" ng-class="{'sidenav-open': hamburgerOpenState}">
 		<div class="container-fluid">
